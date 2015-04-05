@@ -43,11 +43,70 @@
                             "<div class=\"top\">",
                             "    <div class=\"headshot\" style=\"background-image:{photoUrl};\"></div>",
                             "    <div class=\"name\">{firstName} {lastName}</div>",
+                            "    <div class=\"address\">{postAdress}<br/>{postZip} {postTown}</div>",
                             "</div>"
                         ]
                     },
                     "name": "itemTpl",
                     "designerId": "ef5b725e-effa-4da6-a51b-b2a7115af1f1"
+                },
+                {
+                    "type": "Ext.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "designer|uiInterfaceName": "neutral",
+                        "docked": "bottom",
+                        "style": [
+                            "{",
+                            "\"border-top\": \"thin solid #ddd\",",
+                            "\"border-bottom\": \"thin solid #ddd\"",
+                            "}"
+                        ],
+                        "ui": "neutral"
+                    },
+                    "name": "MyToolbar",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "954ce762-6e25-409c-8e4d-55c515ca8586",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": null,
+                                "iconCls": "action",
+                                "text": "Call ([PHONE_NUMBER])"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "eba5507e-1170-43ac-89d0-b797bf01f13e"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": null,
+                                "iconCls": "locate",
+                                "text": "Route to ([ADDRESS])"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "8dd8fc3c-28c6-4f24-b8f2-36190fa0d795"
+                        }
+                    ]
                 }
             ]
         },

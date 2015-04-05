@@ -22,6 +22,8 @@ Ext.define('Exxica.view.LeadShow', {
         'Exxica.view.override.LeadShow',
         'Ext.dataview.DataView',
         'Ext.XTemplate',
+        'Ext.Toolbar',
+        'Ext.Button',
         'Ext.Map'
     ],
 
@@ -37,9 +39,38 @@ Ext.define('Exxica.view.LeadShow', {
                     '<div class="top">',
                     '    <div class="headshot" style="background-image:{photoUrl};"></div>',
                     '    <div class="name">{firstName} {lastName}</div>',
+                    '    <div class="address">{postAdress}<br/>{postZip} {postTown}</div>',
                     '</div>'
                 ],
-                store: 'LeadView'
+                store: 'LeadView',
+                items: [
+                    {
+                        xtype: 'toolbar',
+                        docked: 'bottom',
+                        style: {
+                            'border-top': 'thin solid #ddd',
+                            'border-bottom': 'thin solid #ddd'
+                        },
+                        ui: 'neutral',
+                        layout: {
+                            type: 'hbox',
+                            align: 'center',
+                            pack: 'center'
+                        },
+                        items: [
+                            {
+                                xtype: 'button',
+                                iconCls: 'action',
+                                text: 'Call ([PHONE_NUMBER])'
+                            },
+                            {
+                                xtype: 'button',
+                                iconCls: 'locate',
+                                text: 'Route to ([ADDRESS])'
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 xtype: 'roadmap',
