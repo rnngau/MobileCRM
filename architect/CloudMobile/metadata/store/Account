@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Account",
+        "model": "User",
+        "storeId": "Account"
+    },
+    "name": "MyStore",
+    "designerId": "b4041daf-a43c-46b9-845c-5d837c6fc15d"
+}

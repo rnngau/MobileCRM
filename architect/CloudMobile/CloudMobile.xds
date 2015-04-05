@@ -1,0 +1,76 @@
+{
+    "name": "CloudMobile",
+    "settings": {
+        "cmd": {
+            "license": "custom",
+            "cmdVersion": "5.0.2.270",
+            "frameworkVersion": "2.4.0.482",
+            "frameworkOverride": "D:/Work/Sencha/Touch/2.4.0"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPad",
+                "builtIn": true,
+                "height": 1024,
+                "width": 768
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost/mobile/",
+        "exportPath": "C:/Users/Gaute/Documents/GitHub/MobileCRM/www/cloud/mobile",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1943,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "touch24",
+    "viewOrderMap": {
+        "view": [
+            "ed028afd-d71b-4509-b56c-0ed684fd01e1",
+            "5f766276-5fd4-4afa-8cf9-aad3c3c41eee",
+            "c1f2a413-9757-4032-88eb-5f102cb4f2e0",
+            "34de7a0b-5a0d-482a-bed0-e02cb2d052e8",
+            "5d127761-5240-4ecf-9247-99998ccbfb05",
+            "2baf90a7-0b8f-4ef7-9204-ba02271e18b8"
+        ],
+        "store": [
+            "8190795f-3ac6-40a7-8482-983664a26588",
+            "b4041daf-a43c-46b9-845c-5d837c6fc15d",
+            "44542df4-9a8d-4194-bba3-1abb4ab8c870"
+        ],
+        "controller": [
+            "281224ab-8461-4b2e-9888-353e3182bb15",
+            "95a63176-4b91-49cf-982a-e0ef5a108135",
+            "65271689-b329-480d-ad1d-e101e64a01dd",
+            "ce358c47-f805-42b8-94d0-653b2da1b55d",
+            "7cc1636c-c22a-42a0-991e-7b4c0f738242"
+        ],
+        "model": [
+            "a9f75751-f8d2-45fd-bdef-9ce1a35f78c7",
+            "08e3ea06-7ac9-4696-8d99-2b68b8ddaceb"
+        ],
+        "resource": [
+            "82da3b1e-2a17-4d60-972e-6d7d2cfca4d3",
+            "564e31e6-22f9-4464-b1c4-ba851bab1c4c",
+            "cd9e8d71-575d-4954-89e0-de8768c20474",
+            "4377615d-a3f8-4693-8421-181bb7638d74"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leadShow",
+        "designer|userClassName": "LeadShow",
+        "itemId": "leadShow",
+        "layout": "vbox"
+    },
+    "name": "MyContainer1",
+    "designerId": "2baf90a7-0b8f-4ef7-9204-ba02271e18b8",
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "leadContent",
+                "layout|flex": 1,
+                "store": "LeadView"
+            },
+            "name": "MyDataView1",
+            "designerId": "027868a3-0735-41bc-ac89-6003965f4049",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"top\">",
+                            "    <div class=\"headshot\" style=\"background-image:{photoUrl};\"></div>",
+                            "    <div class=\"name\">{firstName} {lastName}</div>",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "ef5b725e-effa-4da6-a51b-b2a7115af1f1"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "leadMap",
+                "layout|flex": 5
+            },
+            "name": "roadmap",
+            "designerId": "b599b2bf-ecc9-404e-a6a4-90026ff9dcb6",
+            "masterInstanceId": "5d127761-5240-4ecf-9247-99998ccbfb05"
+        }
+    ]
+}

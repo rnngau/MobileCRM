@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Account",
+            "Leads",
+            "LeadEdit",
+            "Main",
+            "LeadShow"
+        ],
+        "name": "Exxica",
+        "requires": [
+            "Ext.MessageBox"
+        ],
+        "stores": [
+            "LeadView"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

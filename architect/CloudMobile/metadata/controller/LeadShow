@@ -1,0 +1,89 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LeadShow",
+        "views": [
+            "LeadShow",
+            "RoadMap"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "7cc1636c-c22a-42a0-991e-7b4c0f738242",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newRecord"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "var me = this;",
+                    "if(newRecord) {",
+                    "    var contentStore = me.getContent().getStore();",
+                    "    contentStore.removeAll();",
+                    "    contentStore.add(newRecord);",
+                    "    me.getRoadMap().setMapCenter({",
+                    "        latitude: newRecord.data.latitude,",
+                    "        longitude: newRecord.data.longitude",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "updateRecord",
+            "designerId": "9e53af03-0060-4c01-82b2-67fc72942bfb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "content",
+                "selector": "dataview#leadContent"
+            },
+            "name": "content",
+            "designerId": "076e9653-e3eb-476b-9e7b-120c07cc1481"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "roadMap",
+                "selector": "map#leadMap"
+            },
+            "name": "roadMap",
+            "designerId": "ee337637-290f-4c9a-865b-3edc9b3bd437"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadEdit",
+                "selector": "formpanel#leadEdit"
+            },
+            "name": "leadEdit",
+            "designerId": "c528d734-2e8e-4428-8f25-1e599fd9733e"
+        }
+    ]
+}

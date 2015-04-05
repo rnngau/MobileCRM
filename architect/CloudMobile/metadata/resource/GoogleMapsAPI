@@ -1,0 +1,13 @@
+{
+    "type": "googlemapsjsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GoogleMapsAPI"
+    },
+    "name": "GoogleMapsAPI",
+    "designerId": "4377615d-a3f8-4693-8421-181bb7638d74"
+}

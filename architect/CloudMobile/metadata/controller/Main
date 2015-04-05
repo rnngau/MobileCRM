@@ -1,0 +1,295 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main",
+        "views": [
+            "MainView"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "ce358c47-f805-42b8-94d0-653b2da1b55d",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View",
+                "fn": "onMainPush",
+                "implHandler": [
+                    "var me = this;",
+                    "var editButton = me.getEditButton();",
+                    "",
+                    "if (view.xtype == \"leadShow\") {",
+                    "    me.getLeads().deselectAll();",
+                    "",
+                    "    me.showEditButton();",
+                    "} else {",
+                    "    me.hideEditButton();",
+                    "}"
+                ],
+                "name": "push"
+            },
+            "name": "onMainPush",
+            "designerId": "cab76ba1-7e94-4b32-b930-b3670db3ba3b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View",
+                "fn": "onMainPop",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (view.xtype == \"leadEdit\") {",
+                    "    me.showEditButton();",
+                    "} else {",
+                    "    me.hideEditButton();",
+                    "}"
+                ],
+                "name": "pop"
+            },
+            "name": "onMainPop",
+            "designerId": "26773ebe-5419-4b8f-857b-49c13bb982ae"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "editButton",
+                "selector": "button#editButton"
+            },
+            "name": "editButton",
+            "designerId": "5ff186bc-a16e-49bb-81cc-c9ab7a4b54e5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "saveButton",
+                "selector": "button#saveButton"
+            },
+            "name": "saveButton",
+            "designerId": "bed1570a-e82b-44f5-8f52-11141847b562"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leads",
+                "selector": "list#leadsList"
+            },
+            "name": "leads",
+            "designerId": "b339f832-3ebc-4217-a9a1-53a982a42763"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadEdit",
+                "selector": "leadEdit"
+            },
+            "name": "leadEdit",
+            "designerId": "f51542c6-16b9-435d-bedc-4f88bf8d5c6a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadShow",
+                "selector": "leadShow"
+            },
+            "name": "leadShow",
+            "designerId": "e60e123e-47fa-4e56-a7bb-981c340d8053"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showEditButton",
+                "implHandler": [
+                    "var editButton = this.getEditButton();",
+                    "",
+                    "if (!editButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "this.hideSaveButton();",
+                    "",
+                    "editButton.show();"
+                ]
+            },
+            "name": "showEditButton",
+            "designerId": "c8c16d25-7c4c-4c5d-8eee-52ea3589457a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideEditButton",
+                "implHandler": [
+                    "var editButton = this.getEditButton();",
+                    "",
+                    "if (editButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "editButton.hide();"
+                ]
+            },
+            "name": "hideEditButton",
+            "designerId": "bc33b1c6-3cda-44e5-bfaa-2781419af5e1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showSaveButton",
+                "implHandler": [
+                    "var saveButton = this.getSaveButton();",
+                    "",
+                    "if (!saveButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "saveButton.show();"
+                ]
+            },
+            "name": "showSaveButton",
+            "designerId": "b2294f13-3c37-4fcf-9965-534862623d10"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideSaveButton",
+                "implHandler": [
+                    "var saveButton = this.getSaveButton();",
+                    "",
+                    "if (saveButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "saveButton.hide();"
+                ]
+            },
+            "name": "hideSaveButton",
+            "designerId": "2dc914be-8149-4553-ae7a-3c5c124b4f83"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveTap",
+                "implHandler": [
+                    "var record = this.getLeadEdit().saveRecord();",
+                    "",
+                    "this.getLeadShow().updateRecord(record);",
+                    "",
+                    "this.getMainView().pop();"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveTap",
+            "designerId": "7e888d32-873f-41bf-bd6b-b8cbc28e9eff"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#editButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onEditTap",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (!me.editLead) {",
+                    "    me.editLead = Ext.create('Exxica.view.LeadEdit');",
+                    "}",
+                    "",
+                    "me.editLead.setRecord(me.getLeadShow().getRecord());",
+                    "",
+                    "me.getMainView().push(me.editLead);"
+                ],
+                "name": "tap"
+            },
+            "name": "onEditTap",
+            "designerId": "a99e0cb9-010f-4589-b4c1-8cd9a3a0a2ae"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "bf4c4869-fe83-4cce-93bf-d866d2166078"
+        }
+    ]
+}

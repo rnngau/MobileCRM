@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LeadView",
+        "model": "Lead",
+        "storeId": "LeadView"
+    },
+    "name": "MyStore",
+    "designerId": "44542df4-9a8d-4194-bba3-1abb4ab8c870"
+}

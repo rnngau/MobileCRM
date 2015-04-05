@@ -1,0 +1,120 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Leads",
+        "models": [
+            "Lead",
+            "User"
+        ],
+        "stores": [
+            "Leads",
+            "Account"
+        ],
+        "views": [
+            "LeadsPanel"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "95a63176-4b91-49cf-982a-e0ef5a108135",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#leadsList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onLeadItemTap",
+                "implHandler": [
+                    "var me = this;",
+                    "var showLead = Ext.create('Exxica.view.LeadShow');",
+                    "var contentStore = me.getLeadContent().getStore();",
+                    "contentStore.removeAll();",
+                    "contentStore.add(record);",
+                    "me.getMainView().push(showLead);"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onLeadItemTap",
+            "designerId": "92c80d84-2a9a-48cf-862d-a34537d0ab19"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "editButton",
+                "selector": "button#editButton"
+            },
+            "name": "editButton",
+            "designerId": "f834759c-9eaf-452b-aa43-b56ec49d32c1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "e550c95c-f424-447f-8a83-621a6051b7ad"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadShow",
+                "selector": "container#leadShow"
+            },
+            "name": "leadShow",
+            "designerId": "ad89d7f4-0e8b-42eb-8d69-4970e7de4907"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadsPanel",
+                "selector": "panel#leadsPanel"
+            },
+            "name": "leadsPanel",
+            "designerId": "253221f2-7f1d-4d19-970e-9625438ef81a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadContent",
+                "selector": "dataview#leadContent"
+            },
+            "name": "leadContent",
+            "designerId": "954c0528-25de-415e-b949-27c0608bf157"
+        }
+    ]
+}

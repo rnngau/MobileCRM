@@ -1,0 +1,136 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Account",
+        "models": [
+            "User",
+            "Lead"
+        ],
+        "stores": [
+            "Account",
+            "Leads"
+        ],
+        "views": [
+            "LoginForm"
+        ]
+    },
+    "designerId": "281224ab-8461-4b2e-9888-353e3182bb15",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "loginform #loginButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "login",
+                "implHandler": [
+                    "var me = this;",
+                    "var form = me.getLoginForm(),",
+                    "    values = form.getValues(),",
+                    "    leads = me.getLeadsPanel();",
+                    "",
+                    "// Success",
+                    "var successCallback = function(resp, ops) {",
+                    "    var accountStore = Ext.getStore('Account');",
+                    "    var User = Ext.ModelMgr.getModel('Exxica.model.User');",
+                    "    var xhr = Ext.JSON.decode(resp.responseText);",
+                    "    var data = xhr.data;",
+                    "    //var leadsStore = Ext.getStore('Leads');",
+                    "",
+                    "    if(xhr.success) {",
+                    "        var account = Ext.create(User, {",
+                    "            controlKey: data._c,",
+                    "            idCompany: data.company_id,",
+                    "            idUser: data.user_id,",
+                    "            idLicence: data.licence_id,",
+                    "            language: data.language",
+                    "        });",
+                    "        accountStore.add(account);",
+                    "",
+                    "        /*leadsStore.getProxy().setExtraParams({",
+                    "            \"licenceid\" account.get('idLicence'),",
+                    "            \"companyid\": account.get('idCompany'),",
+                    "            \"userid\": account.get('idUser'),",
+                    "            \"isBin\": false",
+                    "        });*/",
+                    "        //console.log(leadsStore);",
+                    "        //leadsStore.load();",
+                    "",
+                    "        form.hide();",
+                    "        leads.show();",
+                    "    }",
+                    "};",
+                    "",
+                    "// Failure",
+                    "var failureCallback = function(resp, ops) {",
+                    "    var xhr = Ext.JSON.decode(resp.responseText);",
+                    "",
+                    "    Ext.MsgBox.alert(\"Login failed\", xhr.data.message);",
+                    "};",
+                    "",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: \"http://localhost/cloud/api/index.php?r=mobile/login\",",
+                    "    params: values,",
+                    "    success: successCallback,",
+                    "    failure: failureCallback",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "login",
+            "designerId": "613f385b-036d-4465-acb4-0d48731462d6"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "name": "mainView",
+            "designerId": "e69b4c4b-43c8-4a1b-be4c-1ac8a0738acb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "loginForm",
+                "selector": "loginform"
+            },
+            "name": "loginForm",
+            "designerId": "8c574a84-9a4d-4641-8518-df9ec470178b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadsPanel",
+                "selector": "leadspanel"
+            },
+            "name": "leadsPanel",
+            "designerId": "04d12075-2989-49c6-80b5-b171a0209233"
+        }
+    ]
+}

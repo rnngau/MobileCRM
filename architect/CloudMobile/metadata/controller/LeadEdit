@@ -1,0 +1,166 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LeadEdit",
+        "models": [
+            "User",
+            "Lead"
+        ],
+        "stores": [
+            "Account",
+            "Leads"
+        ],
+        "views": [
+            "LeadEdit"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "65271689-b329-480d-ad1d-e101e64a01dd",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#LeadEdit_ImageContainer_Actions_Library",
+                "designer|targetType": "Ext.Button",
+                "fn": "onPhotoLibraryTap",
+                "implHandler": [
+                    "var me = this;",
+                    "me.getPhotoContainer().getPhoto(navigator.camera.PictureSourceType.PHOTOLIBRARY);"
+                ],
+                "name": "tap"
+            },
+            "name": "onPhotoLibraryTap",
+            "designerId": "002f967c-efa5-4ae3-bc43-249b0844de61"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#LeadEdit_ImageContainer_Actions_Camera",
+                "designer|targetType": "Ext.Button",
+                "fn": "onTakePhotoTap",
+                "implHandler": [
+                    "var me = this;",
+                    "me.getPhotoContainer().getPhoto(navigator.camera.PictureSourceType.CAMERA);"
+                ],
+                "name": "tap"
+            },
+            "name": "onTakePhotoTap",
+            "designerId": "5949903e-8317-4f69-baf7-b6e136dc85ab"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "PhotoContainer",
+                "selector": "image#LeadEdit_ImageContainer_Photo"
+            },
+            "name": "PhotoContainer",
+            "designerId": "2fcd4a33-fc3e-416b-884b-7f5595ff4543"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "source"
+                ],
+                "fn": "getPhoto",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "navigator.camera.getPicture(me.success, me.failure, {",
+                    "    quality: 50,",
+                    "    destinationType: navigator.camera.DestinationType.FILE_URI,",
+                    "    sourceType: source ",
+                    "});"
+                ]
+            },
+            "name": "getPhoto",
+            "designerId": "cd853de1-a94a-499b-ad69-cbb3666d4024"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "image_url"
+                ],
+                "fn": "success",
+                "implHandler": [
+                    "var me = this;",
+                    "me.getPhotoContainer().setSrc(image_uri);"
+                ]
+            },
+            "name": "success",
+            "designerId": "468b902d-25dc-430f-809e-5927966f6017"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "failure",
+                "implHandler": [
+                    "alert(\"Failed\" + message);"
+                ]
+            },
+            "name": "failure",
+            "designerId": "92f936d3-b3cc-451c-8f47-17ec991bc36b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#leadEdit",
+                "designer|params": [
+                    "formpanel"
+                ],
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onLeadEditChange",
+                "implHandler": [
+                    "this.showSaveButton();"
+                ],
+                "name": "change"
+            },
+            "name": "onLeadEditChange",
+            "designerId": "977f235b-f7a0-49f4-9a54-0f67cef9bd78"
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "User",
+        "idProperty": "idUser"
+    },
+    "name": "MyModel",
+    "designerId": "08e3ea06-7ac9-4696-8d99-2b68b8ddaceb",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idUser",
+                "type": "int"
+            },
+            "name": "field33",
+            "designerId": "8371e2aa-8721-4a2f-8c9b-50c65cc1a86f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idLicence",
+                "type": "int"
+            },
+            "name": "field34",
+            "designerId": "adfe3f9a-0143-4167-aae5-23a2b0cd3ee6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idCompany",
+                "type": "int"
+            },
+            "name": "field35",
+            "designerId": "dbfaa3b0-11b5-45a4-b632-49d933ec32ba"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "controlKey",
+                "type": "string"
+            },
+            "name": "field37",
+            "designerId": "b745db7d-0640-41e6-99a6-99ed28ea417e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "language",
+                "type": "string"
+            },
+            "name": "field38",
+            "designerId": "2ce7d46e-7cf1-46c3-a5f2-911802562be0"
+        }
+    ]
+}

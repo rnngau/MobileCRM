@@ -1,0 +1,23 @@
+{
+    "type": "Ext.Map",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "roadmap",
+        "designer|userClassName": "RoadMap",
+        "itemId": "mymap",
+        "mapOptions": [
+            "{",
+            "streetViewControl: false,",
+            "mapTypeControl: false,",
+            "zoom: 13",
+            "}"
+        ],
+        "useCurrentLocation": null
+    },
+    "name": "MyMap",
+    "designerId": "5d127761-5240-4ecf-9247-99998ccbfb05"
+}
