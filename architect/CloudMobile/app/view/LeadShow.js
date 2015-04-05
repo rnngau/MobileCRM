@@ -35,6 +35,8 @@ Ext.define('Exxica.view.LeadShow', {
                 xtype: 'dataview',
                 flex: 1,
                 itemId: 'leadContent',
+                minHeight: 60,
+                scrollable: false,
                 itemTpl: [
                     '<div class="top">',
                     '    <div class="headshot" style="background-image:{photoUrl};"></div>',
@@ -61,12 +63,12 @@ Ext.define('Exxica.view.LeadShow', {
                             {
                                 xtype: 'button',
                                 iconCls: 'action',
-                                text: 'Call ([PHONE_NUMBER])'
+                                text: 'Call'
                             },
                             {
                                 xtype: 'button',
                                 iconCls: 'locate',
-                                text: 'Route to ([ADDRESS])'
+                                text: 'Route to'
                             }
                         ]
                     }

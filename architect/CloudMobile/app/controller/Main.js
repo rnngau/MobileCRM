@@ -40,6 +40,9 @@ Ext.define('Exxica.controller.Main', {
             },
             "button#editButton": {
                 tap: 'onEditTap'
+            },
+            "button#menuButton": {
+                tap: 'onMenuTap'
             }
         }
     },
@@ -85,6 +88,10 @@ Ext.define('Exxica.controller.Main', {
         me.editLead.setRecord(me.getLeadShow().getRecord());
 
         me.getMainView().push(me.editLead);
+    },
+
+    onMenuTap: function(button, e, eOpts) {
+
     },
 
     showEditButton: function() {

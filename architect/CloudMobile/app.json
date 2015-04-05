@@ -34,6 +34,9 @@
    ],
    "css": [
       {
+         "path": "resources/css/custom.css"
+      },
+      {
          "update": "delta",
          "platform": [
             "phone",
@@ -56,7 +59,8 @@
    "resources": [
       "resources/images",
       "resources/icons",
-      "resources/startup"
+      "resources/startup",
+      "resources/css/custom.css"
    ],
    "ignore": [
       ".svn$"

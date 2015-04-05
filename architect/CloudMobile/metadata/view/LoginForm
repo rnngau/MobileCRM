@@ -74,6 +74,38 @@
             ]
         },
         {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null
+            },
+            "name": "MyFieldSet1",
+            "designerId": "bbb3b049-0d83-4f8f-a3ba-94a51a22eb06",
+            "cn": [
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "checked": true,
+                        "itemId": "rememberUser",
+                        "label": "Remember?",
+                        "labelWidth": "40%",
+                        "name": "User[user_remember]"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "14902e4f-fbed-428a-b807-9d766f80dbe7"
+                }
+            ]
+        },
+        {
             "type": "Ext.Button",
             "reference": {
                 "name": "items",

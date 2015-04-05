@@ -20,6 +20,7 @@ Ext.define('Exxica.view.LoginForm', {
     requires: [
         'Ext.form.FieldSet',
         'Ext.field.Password',
+        'Ext.field.Checkbox',
         'Ext.Button'
     ],
 
@@ -47,6 +48,19 @@ Ext.define('Exxica.view.LoginForm', {
                         label: 'Password',
                         labelWidth: '40%',
                         name: 'User[user_password]'
+                    }
+                ]
+            },
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'checkboxfield',
+                        itemId: 'rememberUser',
+                        label: 'Remember?',
+                        labelWidth: '40%',
+                        name: 'User[user_remember]',
+                        checked: true
                     }
                 ]
             },

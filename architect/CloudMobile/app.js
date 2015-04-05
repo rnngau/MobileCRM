@@ -24,8 +24,8 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    stores: [
-        'LeadView'
+    views: [
+        'LeadsList'
     ],
     controllers: [
         'Account',

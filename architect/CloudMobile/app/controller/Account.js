@@ -32,7 +32,7 @@ Ext.define('Exxica.controller.Account', {
         refs: {
             mainView: 'mainview',
             loginForm: 'loginform',
-            leadsPanel: 'leadspanel'
+            leads: 'list#leadsList'
         },
 
         control: {
@@ -45,8 +45,7 @@ Ext.define('Exxica.controller.Account', {
     login: function(button, e, eOpts) {
         var me = this;
         var form = me.getLoginForm(),
-            values = form.getValues(),
-            leads = me.getLeadsPanel();
+            values = form.getValues();
 
         // Success
         var successCallback = function(resp, ops) {
@@ -54,7 +53,6 @@ Ext.define('Exxica.controller.Account', {
             var User = Ext.ModelMgr.getModel('Exxica.model.User');
             var xhr = Ext.JSON.decode(resp.responseText);
             var data = xhr.data;
-            //var leadsStore = Ext.getStore('Leads');
 
             if(xhr.success) {
                 var account = Ext.create(User, {
@@ -66,14 +64,18 @@ Ext.define('Exxica.controller.Account', {
                 });
                 accountStore.add(account);
 
-                /*leadsStore.getProxy().setExtraParams({
-                    "licenceid" account.get('idLicence'),
-                    "companyid": account.get('idCompany'),
-                    "userid": account.get('idUser'),
-                    "isBin": false
-                });*/
-                //console.log(leadsStore);
-                //leadsStore.load();
+
+                var leads = Ext.create('Exxica.view.LeadsList');
+                var leadsStore = leads.getStore();
+
+                leadsStore.getProxy().setExtraParams({
+                    '_c': account.get('controlKey'),
+                    'licenceid': account.get('idLicence'),
+                    'userid': account.get('idUser'),
+                    'companyid': account.get('idCompany'),
+                    'isBin': false
+                });
+                leadsStore.load();
 
                 form.hide();
                 leads.show();

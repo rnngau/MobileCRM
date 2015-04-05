@@ -1,0 +1,85 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MapModel"
+    },
+    "name": "MyModel",
+    "designerId": "f66d397e-9f03-4f16-9f7b-7310d32f416a",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "name": "field40",
+            "designerId": "d881dbeb-a2f9-4590-a46e-fc44410a1d59"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "formattedAddress",
+                "type": "string"
+            },
+            "name": "field39",
+            "designerId": "414f285e-26ea-409e-8c63-19cbb8afff88"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "geoLatitude",
+                "type": "float"
+            },
+            "name": "field42",
+            "designerId": "3a62b9c4-6a89-40a8-be6b-c53909a28610"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "geoLongitude",
+                "type": "float"
+            },
+            "name": "field41",
+            "designerId": "602e03d5-a901-4d64-8647-05c4392a7c7d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "geoPlaceId",
+                "type": "string"
+            },
+            "name": "field43",
+            "designerId": "ee24ce38-0aaa-4188-a24e-ac68ba0b547c"
+        }
+    ]
+}

@@ -17,6 +17,17 @@ Ext.define('Exxica.controller.LeadShow', {
     extend: 'Ext.app.Controller',
 
     config: {
+        models: [
+            'MapModel',
+            'Lead',
+            'User'
+        ],
+        stores: [
+            'MapStore',
+            'Leads',
+            'LeadView',
+            'Account'
+        ],
         views: [
             'LeadShow',
             'RoadMap'

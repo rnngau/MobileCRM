@@ -17,8 +17,8 @@
         "requires": [
             "Ext.MessageBox"
         ],
-        "stores": [
-            "LeadView"
+        "views": [
+            "LeadsList"
         ]
     },
     "name": "Application",

@@ -35,8 +35,7 @@
                 "implHandler": [
                     "var me = this;",
                     "var form = me.getLoginForm(),",
-                    "    values = form.getValues(),",
-                    "    leads = me.getLeadsPanel();",
+                    "    values = form.getValues();",
                     "",
                     "// Success",
                     "var successCallback = function(resp, ops) {",
@@ -44,7 +43,6 @@
                     "    var User = Ext.ModelMgr.getModel('Exxica.model.User');",
                     "    var xhr = Ext.JSON.decode(resp.responseText);",
                     "    var data = xhr.data;",
-                    "    //var leadsStore = Ext.getStore('Leads');",
                     "",
                     "    if(xhr.success) {",
                     "        var account = Ext.create(User, {",
@@ -56,14 +54,18 @@
                     "        });",
                     "        accountStore.add(account);",
                     "",
-                    "        /*leadsStore.getProxy().setExtraParams({",
-                    "            \"licenceid\" account.get('idLicence'),",
-                    "            \"companyid\": account.get('idCompany'),",
-                    "            \"userid\": account.get('idUser'),",
-                    "            \"isBin\": false",
-                    "        });*/",
-                    "        //console.log(leadsStore);",
-                    "        //leadsStore.load();",
+                    "",
+                    "        var leads = Ext.create('Exxica.view.LeadsList');",
+                    "        var leadsStore = leads.getStore();",
+                    "",
+                    "        leadsStore.getProxy().setExtraParams({",
+                    "            '_c': account.get('controlKey'),",
+                    "            'licenceid': account.get('idLicence'),",
+                    "            'userid': account.get('idUser'),",
+                    "            'companyid': account.get('idCompany'),",
+                    "            'isBin': false",
+                    "        });",
+                    "        leadsStore.load();",
                     "",
                     "        form.hide();",
                     "        leads.show();",
@@ -126,11 +128,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "leadsPanel",
-                "selector": "leadspanel"
+                "ref": "leads",
+                "selector": "list#leadsList"
             },
-            "name": "leadsPanel",
-            "designerId": "04d12075-2989-49c6-80b5-b171a0209233"
+            "name": "leads",
+            "designerId": "9aef280f-f1fe-4d6b-a004-7053b3caa8ae"
         }
     ]
 }

@@ -7,6 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "LeadShow",
+        "models": [
+            "MapModel",
+            "Lead",
+            "User"
+        ],
+        "stores": [
+            "MapStore",
+            "Leads",
+            "LeadView",
+            "Account"
+        ],
         "views": [
             "LeadShow",
             "RoadMap"

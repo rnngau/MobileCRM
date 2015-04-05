@@ -26,15 +26,15 @@ Ext.define('Exxica.controller.Leads', {
             'Account'
         ],
         views: [
-            'LeadsPanel'
+            null
         ],
 
         refs: {
             editButton: 'button#editButton',
             mainView: 'navigationview#mainView',
             leadShow: 'container#leadShow',
-            leadsPanel: 'panel#leadsPanel',
-            leadContent: 'dataview#leadContent'
+            leadContent: 'dataview#leadContent',
+            leads: 'list#leadsList'
         },
 
         control: {

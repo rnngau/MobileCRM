@@ -25,6 +25,9 @@
                 "id": null,
                 "itemId": "leadContent",
                 "layout|flex": 1,
+                "minHeight": 60,
+                "minWidth": null,
+                "scrollable": false,
                 "store": "LeadView"
             },
             "name": "MyDataView1",
@@ -86,7 +89,7 @@
                             "userConfig": {
                                 "icon": null,
                                 "iconCls": "action",
-                                "text": "Call ([PHONE_NUMBER])"
+                                "text": "Call"
                             },
                             "name": "MyButton4",
                             "designerId": "eba5507e-1170-43ac-89d0-b797bf01f13e"
@@ -101,7 +104,7 @@
                             "userConfig": {
                                 "iconAlign": null,
                                 "iconCls": "locate",
-                                "text": "Route to ([ADDRESS])"
+                                "text": "Route to"
                             },
                             "name": "MyButton6",
                             "designerId": "8dd8fc3c-28c6-4f24-b8f2-36190fa0d795"

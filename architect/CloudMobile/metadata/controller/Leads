@@ -96,11 +96,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "leadsPanel",
-                "selector": "panel#leadsPanel"
+                "ref": "leadContent",
+                "selector": "dataview#leadContent"
             },
-            "name": "leadsPanel",
-            "designerId": "253221f2-7f1d-4d19-970e-9625438ef81a"
+            "name": "leadContent",
+            "designerId": "954c0528-25de-415e-b949-27c0608bf157"
         },
         {
             "type": "controllerref",
@@ -110,11 +110,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "leadContent",
-                "selector": "dataview#leadContent"
+                "ref": "leads",
+                "selector": "list#leadsList"
             },
-            "name": "leadContent",
-            "designerId": "954c0528-25de-415e-b949-27c0608bf157"
+            "name": "leads",
+            "designerId": "7983b1ab-b868-4ed4-86fe-d9d027456834"
         }
     ]
 }

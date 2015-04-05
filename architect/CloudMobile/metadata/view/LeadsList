@@ -1,0 +1,74 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "x-contacts"
+        ],
+        "designer|userClassName": "LeadsList",
+        "emptyText": "No leads found...",
+        "grouped": true,
+        "infinite": null,
+        "itemId": "leadsList",
+        "loadingText": "Loading leads...",
+        "store": "Leads",
+        "variableHeights": true
+    },
+    "name": "MyList",
+    "designerId": "8a19d0bb-d59d-4a2d-ba44-3dc037fcc229",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"headshot\" style=\"background-image:{photoUrl};\"></div>",
+                    "{lastName}, {firstName}",
+                    "<span>Tel: {contactPhone}, Mail: {contactMail}</span>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "63893e8c-55cd-4328-ac82-85f75aa65452"
+        },
+        {
+            "type": "Ext.plugin.PullRefresh",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "lastUpdatedText": null
+            },
+            "name": "MyPullRefreshPlugin",
+            "designerId": "7dbb28c0-c4f5-4990-9442-7536f698f9ee",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "pullTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "pullTpl",
+                        "implHandler": [
+                            " "
+                        ]
+                    },
+                    "name": "pullTpl",
+                    "designerId": "74c395ac-ad9b-4cf5-8b5c-b1893fec00cc"
+                }
+            ]
+        }
+    ]
+}

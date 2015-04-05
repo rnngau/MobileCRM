@@ -44,20 +44,6 @@
                     "name": "loginform",
                     "designerId": "b57c8c0b-e4c8-477e-a986-86d4beed839a",
                     "masterInstanceId": "5f766276-5fd4-4afa-8cf9-aad3c3c41eee"
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "hidden": true
-                    },
-                    "name": "leadspanel",
-                    "designerId": "8e3d096d-72c9-4d24-88e9-c37a1a9d349e",
-                    "masterInstanceId": "c1f2a413-9757-4032-88eb-5f102cb4f2e0"
                 }
             ]
         },
@@ -76,6 +62,22 @@
             "name": "MyNavigationBar",
             "designerId": "06ae2735-d737-4370-b41c-7d73d19dd25b",
             "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": null,
+                        "iconCls": null,
+                        "itemId": "menuButton",
+                        "text": "Menu"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "afdee2bf-9e9b-4f12-af55-d18336e230a6"
+                },
                 {
                     "type": "Ext.Button",
                     "reference": {

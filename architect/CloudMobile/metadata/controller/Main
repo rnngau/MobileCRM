@@ -138,6 +138,20 @@
             "designerId": "e60e123e-47fa-4e56-a7bb-981c340d8053"
         },
         {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "bf4c4869-fe83-4cce-93bf-d866d2166078"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -278,18 +292,20 @@
             "designerId": "a99e0cb9-010f-4589-b4c1-8cd9a3a0a2ae"
         },
         {
-            "type": "controllerref",
+            "type": "controlleraction",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mainView",
-                "selector": "navigationview#mainView"
+                "designer|controlQuery": "button#menuButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onMenuTap",
+                "name": "tap"
             },
-            "name": "mainView",
-            "designerId": "bf4c4869-fe83-4cce-93bf-d866d2166078"
+            "name": "onMenuTap",
+            "designerId": "a462f8c7-d729-4a78-b00b-40aff6603a2b"
         }
     ]
 }

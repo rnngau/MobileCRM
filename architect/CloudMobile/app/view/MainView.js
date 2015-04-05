@@ -19,7 +19,6 @@ Ext.define('Exxica.view.MainView', {
 
     requires: [
         'Exxica.view.LoginForm',
-        'Exxica.view.LeadsPanel',
         'Ext.form.Panel',
         'Ext.navigation.Bar',
         'Ext.Button'
@@ -38,10 +37,6 @@ Ext.define('Exxica.view.MainView', {
                     {
                         xtype: 'loginform',
                         itemId: 'loginForm'
-                    },
-                    {
-                        xtype: 'leadspanel',
-                        hidden: true
                     }
                 ]
             }
@@ -51,6 +46,11 @@ Ext.define('Exxica.view.MainView', {
             autoDestroy: false,
             androidAnimation: true,
             items: [
+                {
+                    xtype: 'button',
+                    itemId: 'menuButton',
+                    text: 'Menu'
+                },
                 {
                     xtype: 'button',
                     align: 'right',
