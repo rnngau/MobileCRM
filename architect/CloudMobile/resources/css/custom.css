@@ -1,3 +1,39 @@
+.top {
+    padding: 5px 10px !important;
+}
+
+.top .headshot {
+    position: relative;
+    float: left;
+    border: thin solid #ddd;
+    min-width: 80px;
+    min-height: 80px;
+    margin-right: 10px;
+}
+
+.top .name {
+    position: relative;
+    float: left;
+}
+
+.top .address {
+    position: relative;
+    float: left;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.top .contact {
+    position: relative;
+    float: right;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.top .contact span.label{
+    color: #111;
+}
+
 .menu-icon {
     position:relative;
     display:inline-block;

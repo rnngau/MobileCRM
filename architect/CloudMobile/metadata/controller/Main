@@ -205,6 +205,100 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "showSettingsButton",
+                "implHandler": [
+                    "var settingsButton = this.getSettingsButton();",
+                    "",
+                    "if (!settingsButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "this.hideSaveButton();",
+                    "this.hideEditButton();",
+                    "",
+                    "settingsButton.show();"
+                ]
+            },
+            "name": "showSettingsButton",
+            "designerId": "6dae9898-657a-4075-86c5-45e6cbf6aa4c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideSettingsButton",
+                "implHandler": [
+                    "var settingsButton = this.getSettingsButton();",
+                    "",
+                    "if (settingsButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "settingsButton.hide();"
+                ]
+            },
+            "name": "hideSettingsButton",
+            "designerId": "b90f0940-4bbf-4ac8-b599-3f399c51f297"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showAddButton",
+                "implHandler": [
+                    "var addButton = this.getAddButton();",
+                    "",
+                    "if (!addButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "this.hideSaveButton();",
+                    "this.hideEditButton();",
+                    "",
+                    "addButton.show();"
+                ]
+            },
+            "name": "showAddButton",
+            "designerId": "9b22fe9f-1f78-4b75-bcda-e4925e88d013"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideAddButton",
+                "implHandler": [
+                    "var addButton = this.getAddButton();",
+                    "",
+                    "if (addButton.isHidden()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "addButton.hide();"
+                ]
+            },
+            "name": "hideAddButton",
+            "designerId": "91da5763-b9e1-4dc5-913b-8b223b7b05ec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "showSaveButton",
                 "implHandler": [
                     "var saveButton = this.getSaveButton();",
@@ -292,20 +386,32 @@
             "designerId": "a99e0cb9-010f-4589-b4c1-8cd9a3a0a2ae"
         },
         {
-            "type": "controlleraction",
+            "type": "controllerref",
             "reference": {
-                "name": "listeners",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#menuButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "onMenuTap",
-                "name": "tap"
+                "ref": "settingsButton",
+                "selector": "button#settingsButton"
             },
-            "name": "onMenuTap",
-            "designerId": "a462f8c7-d729-4a78-b00b-40aff6603a2b"
+            "name": "settingsButton",
+            "designerId": "cf02e714-bc2c-4f45-a657-b3fa832c3c69"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "addButton",
+                "selector": "button#addButton"
+            },
+            "name": "addButton",
+            "designerId": "d7978bd1-eda5-427c-a6ca-7b8f22cf1638"
         }
     ]
 }

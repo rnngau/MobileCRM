@@ -69,11 +69,6 @@ Ext.define('Exxica.view.MainView', {
             items: [
                 {
                     xtype: 'button',
-                    itemId: 'menuButton',
-                    text: 'Menu'
-                },
-                {
-                    xtype: 'button',
                     align: 'right',
                     hidden: true,
                     itemId: 'editButton',
@@ -85,6 +80,19 @@ Ext.define('Exxica.view.MainView', {
                     hidden: true,
                     itemId: 'saveButton',
                     text: 'Save'
+                },
+                {
+                    xtype: 'button',
+                    align: 'right',
+                    hidden: true,
+                    itemId: 'addButton',
+                    iconCls: 'add'
+                },
+                {
+                    xtype: 'button',
+                    align: 'right',
+                    itemId: 'settingsButton',
+                    iconCls: 'settings'
                 }
             ]
         }

@@ -27,7 +27,9 @@ Ext.define('Exxica.controller.Main', {
             leads: 'list#leadsList',
             leadEdit: 'leadEdit',
             leadShow: 'leadShow',
-            mainView: 'navigationview#mainView'
+            mainView: 'navigationview#mainView',
+            settingsButton: 'button#settingsButton',
+            addButton: 'button#addButton'
         },
 
         control: {
@@ -40,9 +42,6 @@ Ext.define('Exxica.controller.Main', {
             },
             "button#editButton": {
                 tap: 'onEditTap'
-            },
-            "button#menuButton": {
-                tap: 'onMenuTap'
             }
         }
     },
@@ -90,10 +89,6 @@ Ext.define('Exxica.controller.Main', {
         me.getMainView().push(me.editLead);
     },
 
-    onMenuTap: function(button, e, eOpts) {
-
-    },
-
     showEditButton: function() {
         var editButton = this.getEditButton();
 
@@ -114,6 +109,52 @@ Ext.define('Exxica.controller.Main', {
         }
 
         editButton.hide();
+    },
+
+    showSettingsButton: function() {
+        var settingsButton = this.getSettingsButton();
+
+        if (!settingsButton.isHidden()) {
+            return;
+        }
+
+        this.hideSaveButton();
+        this.hideEditButton();
+
+        settingsButton.show();
+    },
+
+    hideSettingsButton: function() {
+        var settingsButton = this.getSettingsButton();
+
+        if (settingsButton.isHidden()) {
+            return;
+        }
+
+        settingsButton.hide();
+    },
+
+    showAddButton: function() {
+        var addButton = this.getAddButton();
+
+        if (!addButton.isHidden()) {
+            return;
+        }
+
+        this.hideSaveButton();
+        this.hideEditButton();
+
+        addButton.show();
+    },
+
+    hideAddButton: function() {
+        var addButton = this.getAddButton();
+
+        if (addButton.isHidden()) {
+            return;
+        }
+
+        addButton.hide();
     },
 
     showSaveButton: function() {

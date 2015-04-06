@@ -117,22 +117,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "html": null,
-                        "iconCls": null,
-                        "itemId": "menuButton",
-                        "text": "Menu"
-                    },
-                    "name": "MyButton7",
-                    "designerId": "afdee2bf-9e9b-4f12-af55-d18336e230a6"
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
                         "align": "right",
                         "hidden": true,
                         "itemId": "editButton",
@@ -156,6 +140,39 @@
                     },
                     "name": "MyButton5",
                     "designerId": "9b8dcfa4-57ff-4e57-ab39-2057b6d277b8"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "hidden": true,
+                        "iconCls": "add",
+                        "itemId": "addButton",
+                        "text": null
+                    },
+                    "name": "MyButton7",
+                    "designerId": "aa305328-710a-4a54-94af-0f144ada2a9f"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "iconCls": "settings",
+                        "itemId": "settingsButton",
+                        "text": null
+                    },
+                    "name": "MyButton8",
+                    "designerId": "7582cf1f-4535-416a-9102-d4e398dbf16b"
                 }
             ]
         }
