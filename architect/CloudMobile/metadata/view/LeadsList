@@ -9,17 +9,43 @@
         "cls": [
             "x-contacts"
         ],
+        "designer|userAlias": "leadsList",
         "designer|userClassName": "LeadsList",
         "emptyText": "No leads found...",
+        "fullscreen": null,
         "grouped": true,
-        "infinite": null,
+        "height": "100%",
+        "hideAnimation": [
+            "{",
+            "type: 'fadeOut',",
+            "duration: 200",
+            "}"
+        ],
+        "itemHeight": 50,
         "itemId": "leadsList",
         "loadingText": "Loading leads...",
+        "minHeight": null,
+        "minWidth": null,
+        "onItemDisclosure": null,
+        "refreshHeightOnUpdate": false,
+        "showAnimation": [
+            "{",
+            "type: 'fadeIn',",
+            "duration: 200",
+            "}"
+        ],
         "store": "Leads",
-        "variableHeights": true
+        "striped": null,
+        "ui": null,
+        "variableHeights": true,
+        "width": null
     },
     "name": "MyList",
-    "designerId": "8a19d0bb-d59d-4a2d-ba44-3dc037fcc229",
+    "configAlternates": {
+        "hideAnimation": "object",
+        "showAnimation": "object"
+    },
+    "designerId": "74752679-8577-46a4-864b-763555607850",
     "cn": [
         {
             "type": "Ext.XTemplate",
@@ -32,12 +58,14 @@
                 "designer|displayName": "itemTpl",
                 "implHandler": [
                     "<div class=\"headshot\" style=\"background-image:{photoUrl};\"></div>",
-                    "{lastName}, {firstName}",
-                    "<span>Tel: {contactPhone}, Mail: {contactMail}</span>"
+                    "{lastName}, {firstName} {middleName}",
+                    "<span>",
+                    "    Tel: {contactPhone}",
+                    "</span>"
                 ]
             },
             "name": "itemTpl",
-            "designerId": "63893e8c-55cd-4328-ac82-85f75aa65452"
+            "designerId": "d3759b09-7019-4b71-b8e2-923fa0d6b9a7"
         },
         {
             "type": "Ext.plugin.PullRefresh",
@@ -50,25 +78,7 @@
                 "lastUpdatedText": null
             },
             "name": "MyPullRefreshPlugin",
-            "designerId": "7dbb28c0-c4f5-4990-9442-7536f698f9ee",
-            "cn": [
-                {
-                    "type": "Ext.XTemplate",
-                    "reference": {
-                        "name": "pullTpl",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "pullTpl",
-                        "implHandler": [
-                            " "
-                        ]
-                    },
-                    "name": "pullTpl",
-                    "designerId": "74c395ac-ad9b-4cf5-8b5c-b1893fec00cc"
-                }
-            ]
+            "designerId": "07e2bc00-4cb4-4ef2-ac69-f3bb84fb2a73"
         }
     ]
 }

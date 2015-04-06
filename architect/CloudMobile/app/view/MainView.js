@@ -19,6 +19,7 @@ Ext.define('Exxica.view.MainView', {
 
     requires: [
         'Exxica.view.LoginForm',
+        'Exxica.view.LeadsContainer',
         'Ext.form.Panel',
         'Ext.navigation.Bar',
         'Ext.Button'
@@ -37,6 +38,26 @@ Ext.define('Exxica.view.MainView', {
                     {
                         xtype: 'loginform',
                         itemId: 'loginForm'
+                    },
+                    {
+                        xtype: 'container',
+                        hidden: true,
+                        itemId: 'loginSuccess',
+                        style: 'background-color:#1985D0;color:white;padding-top:50px;',
+                        layout: {
+                            type: 'vbox',
+                            align: 'center'
+                        },
+                        items: [
+                            {
+                                xtype: 'container',
+                                html: '<span>Login successful. Please wait whilst the app is loading data.</span>'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'leadsContainer',
+                        hidden: true
                     }
                 ]
             }

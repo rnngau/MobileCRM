@@ -29,8 +29,8 @@
         "lockUrlPrefix": false,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
-            "value": "emulate",
-            "display": "Native Build & Emulate"
+            "value": "webBuild",
+            "display": "Build web app"
         }
     },
     "xdsVersion": "3.1.0",
@@ -45,7 +45,8 @@
             "34de7a0b-5a0d-482a-bed0-e02cb2d052e8",
             "5d127761-5240-4ecf-9247-99998ccbfb05",
             "2baf90a7-0b8f-4ef7-9204-ba02271e18b8",
-            "8a19d0bb-d59d-4a2d-ba44-3dc037fcc229"
+            "74752679-8577-46a4-864b-763555607850",
+            "ce98f9b0-5f9e-4072-b097-96afec837b0e"
         ],
         "store": [
             "8190795f-3ac6-40a7-8482-983664a26588",

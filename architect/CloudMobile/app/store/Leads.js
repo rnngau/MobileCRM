@@ -31,7 +31,12 @@ Ext.define('Exxica.store.Leads', {
         storeId: 'Leads',
         proxy: {
             type: 'direct',
-            directFn: 'Leads.read',
+            api: {
+                create: 'Leads.create',
+                read: 'Leads.read',
+                update: 'Leads.update',
+                destroy: 'Leads.destroy'
+            },
             reader: {
                 type: 'json',
                 idProperty: 'idLead',

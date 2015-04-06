@@ -16,7 +16,8 @@
             "Account"
         ],
         "views": [
-            "LeadsPanel"
+            "LeadsList",
+            "LeadsContainer"
         ]
     },
     "name": "MyController",

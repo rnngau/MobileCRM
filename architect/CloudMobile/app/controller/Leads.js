@@ -26,7 +26,8 @@ Ext.define('Exxica.controller.Leads', {
             'Account'
         ],
         views: [
-            null
+            'LeadsList',
+            'LeadsContainer'
         ],
 
         refs: {

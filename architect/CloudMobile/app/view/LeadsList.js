@@ -15,6 +15,7 @@
 
 Ext.define('Exxica.view.LeadsList', {
     extend: 'Ext.dataview.List',
+    alias: 'widget.leadsList',
 
     requires: [
         'Ext.XTemplate',
@@ -23,22 +24,32 @@ Ext.define('Exxica.view.LeadsList', {
 
     config: {
         cls: 'x-contacts',
+        height: '100%',
         itemId: 'leadsList',
         emptyText: 'No leads found...',
         loadingText: 'Loading leads...',
         store: 'Leads',
         grouped: true,
+        itemHeight: 50,
+        refreshHeightOnUpdate: false,
         variableHeights: true,
+        hideAnimation: {
+            type: 'fadeOut',
+            duration: 200
+        },
+        showAnimation: {
+            type: 'fadeIn',
+            duration: 200
+        },
         itemTpl: [
             '<div class="headshot" style="background-image:{photoUrl};"></div>',
-            '{lastName}, {firstName}',
-            '<span>Tel: {contactPhone}, Mail: {contactMail}</span>'
+            '{lastName}, {firstName} {middleName}',
+            '<span>',
+            '    Tel: {contactPhone}',
+            '</span>'
         ],
         plugins: [
             {
-                pullTpl: [
-                    ' '
-                ],
                 type: 'pullrefresh'
             }
         ]

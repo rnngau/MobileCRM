@@ -44,6 +44,53 @@
                     "name": "loginform",
                     "designerId": "b57c8c0b-e4c8-477e-a986-86d4beed839a",
                     "masterInstanceId": "5f766276-5fd4-4afa-8cf9-aad3c3c41eee"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "hidden": true,
+                        "html": null,
+                        "itemId": "loginSuccess",
+                        "layout": "vbox",
+                        "style": "background-color:#1985D0;color:white;padding-top:50px;"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "e128e395-6449-4e3a-b885-7a7b9080e343",
+                    "cn": [
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<span>Login successful. Please wait whilst the app is loading data.</span>"
+                            },
+                            "name": "MyContainer2",
+                            "designerId": "95fb6774-3ca4-40ae-a0ca-b21629579c3c"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true
+                    },
+                    "name": "leadscontainer",
+                    "designerId": "0a70700c-57c8-40c8-96d2-bc383e0b6a32",
+                    "masterInstanceId": "ce98f9b0-5f9e-4072-b097-96afec837b0e"
                 }
             ]
         },

@@ -32,7 +32,10 @@ Ext.define('Exxica.controller.Account', {
         refs: {
             mainView: 'mainview',
             loginForm: 'loginform',
-            leads: 'list#leadsList'
+            leads: 'list#leadsList',
+            loginButton: 'loginform #loginButton',
+            loginSuccess: 'container#loginSuccess',
+            leadsContainer: 'container#leadsContainer'
         },
 
         control: {
@@ -45,16 +48,20 @@ Ext.define('Exxica.controller.Account', {
     login: function(button, e, eOpts) {
         var me = this;
         var form = me.getLoginForm(),
-            values = form.getValues();
+            values = form.getValues(),
+            loginBtn = me.getLoginButton(),
+            loginSuccess = me.getLoginSuccess();
 
         // Success
         var successCallback = function(resp, ops) {
-            var accountStore = Ext.getStore('Account');
-            var User = Ext.ModelMgr.getModel('Exxica.model.User');
             var xhr = Ext.JSON.decode(resp.responseText);
             var data = xhr.data;
 
             if(xhr.success) {
+                form.hide();
+                loginSuccess.show();
+                var accountStore = Ext.getStore('Account');
+                var User = Ext.ModelMgr.getModel('Exxica.model.User');
                 var account = Ext.create(User, {
                     controlKey: data._c,
                     idCompany: data.company_id,
@@ -64,9 +71,7 @@ Ext.define('Exxica.controller.Account', {
                 });
                 accountStore.add(account);
 
-
-                var leads = Ext.create('Exxica.view.LeadsList');
-                var leadsStore = leads.getStore();
+                var leadsStore = Ext.getStore('Leads');
 
                 leadsStore.getProxy().setExtraParams({
                     '_c': account.get('controlKey'),
@@ -75,10 +80,18 @@ Ext.define('Exxica.controller.Account', {
                     'companyid': account.get('idCompany'),
                     'isBin': false
                 });
-                leadsStore.load();
-
-                form.hide();
-                leads.show();
+                leadsStore.load({
+                    callback: function(records, options, success) {
+                        if(success) {
+                            var container = me.getLeadsContainer();
+                            container.show();
+                            loginSuccess.hide();
+                        } else {
+                            loginBtn.setDisabled(false);
+                            Ext.MsgBox.alert("Login failed", "An unspecified error occurred.");
+                        }
+                    }
+                });
             }
         };
 
@@ -86,10 +99,12 @@ Ext.define('Exxica.controller.Account', {
         var failureCallback = function(resp, ops) {
             var xhr = Ext.JSON.decode(resp.responseText);
 
+            loginBtn.setDisabled(false);
+
             Ext.MsgBox.alert("Login failed", xhr.data.message);
         };
 
-
+        loginBtn.setDisabled(true);
         Ext.Ajax.request({
             url: "http://localhost/cloud/api/index.php?r=mobile/login",
             params: values,

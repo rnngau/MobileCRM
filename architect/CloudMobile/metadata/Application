@@ -16,9 +16,6 @@
         "name": "Exxica",
         "requires": [
             "Ext.MessageBox"
-        ],
-        "views": [
-            "LeadsList"
         ]
     },
     "name": "Application",

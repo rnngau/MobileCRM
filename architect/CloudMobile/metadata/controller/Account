@@ -35,16 +35,20 @@
                 "implHandler": [
                     "var me = this;",
                     "var form = me.getLoginForm(),",
-                    "    values = form.getValues();",
+                    "    values = form.getValues(),",
+                    "    loginBtn = me.getLoginButton(),",
+                    "    loginSuccess = me.getLoginSuccess();",
                     "",
                     "// Success",
                     "var successCallback = function(resp, ops) {",
-                    "    var accountStore = Ext.getStore('Account');",
-                    "    var User = Ext.ModelMgr.getModel('Exxica.model.User');",
                     "    var xhr = Ext.JSON.decode(resp.responseText);",
                     "    var data = xhr.data;",
                     "",
                     "    if(xhr.success) {",
+                    "        form.hide();",
+                    "        loginSuccess.show();",
+                    "        var accountStore = Ext.getStore('Account');",
+                    "        var User = Ext.ModelMgr.getModel('Exxica.model.User');",
                     "        var account = Ext.create(User, {",
                     "            controlKey: data._c,",
                     "            idCompany: data.company_id,",
@@ -54,9 +58,7 @@
                     "        });",
                     "        accountStore.add(account);",
                     "",
-                    "",
-                    "        var leads = Ext.create('Exxica.view.LeadsList');",
-                    "        var leadsStore = leads.getStore();",
+                    "        var leadsStore = Ext.getStore('Leads');",
                     "",
                     "        leadsStore.getProxy().setExtraParams({",
                     "            '_c': account.get('controlKey'),",
@@ -65,10 +67,18 @@
                     "            'companyid': account.get('idCompany'),",
                     "            'isBin': false",
                     "        });",
-                    "        leadsStore.load();",
-                    "",
-                    "        form.hide();",
-                    "        leads.show();",
+                    "        leadsStore.load({",
+                    "            callback: function(records, options, success) {",
+                    "                if(success) {",
+                    "                    var container = me.getLeadsContainer();",
+                    "                    container.show();",
+                    "                    loginSuccess.hide();",
+                    "                } else {",
+                    "                    loginBtn.setDisabled(false);",
+                    "                    Ext.MsgBox.alert(\"Login failed\", \"An unspecified error occurred.\");",
+                    "                }",
+                    "            }",
+                    "        });",
                     "    }",
                     "};",
                     "",
@@ -76,10 +86,12 @@
                     "var failureCallback = function(resp, ops) {",
                     "    var xhr = Ext.JSON.decode(resp.responseText);",
                     "",
+                    "    loginBtn.setDisabled(false);",
+                    "",
                     "    Ext.MsgBox.alert(\"Login failed\", xhr.data.message);",
                     "};",
                     "",
-                    "",
+                    "loginBtn.setDisabled(true);",
                     "Ext.Ajax.request({",
                     "    url: \"http://localhost/cloud/api/index.php?r=mobile/login\",",
                     "    params: values,",
@@ -133,6 +145,48 @@
             },
             "name": "leads",
             "designerId": "9aef280f-f1fe-4d6b-a004-7053b3caa8ae"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "loginButton",
+                "selector": "loginform #loginButton"
+            },
+            "name": "loginButton",
+            "designerId": "1aad7d46-e214-46e8-a9d2-961a1d6685ed"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "loginSuccess",
+                "selector": "container#loginSuccess"
+            },
+            "name": "loginSuccess",
+            "designerId": "d98494bc-9aae-41a2-a2a3-61ec4a412396"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "leadsContainer",
+                "selector": "container#leadsContainer"
+            },
+            "name": "leadsContainer",
+            "designerId": "d4d96b53-e671-46f0-891b-67b88a995f40"
         }
     ]
 }

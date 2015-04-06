@@ -1,0 +1,32 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leadsContainer",
+        "designer|userClassName": "LeadsContainer",
+        "itemId": "leadsContainer",
+        "layout": "vbox"
+    },
+    "name": "MyContainer1",
+    "designerId": "ce98f9b0-5f9e-4072-b097-96afec837b0e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "name": "leadslist1",
+            "designerId": "937d51eb-aa1c-438a-8fde-96ec4b21eb46",
+            "masterInstanceId": "74752679-8577-46a4-864b-763555607850"
+        }
+    ]
+}
