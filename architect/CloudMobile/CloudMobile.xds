@@ -5,7 +5,7 @@
             "license": "custom",
             "cmdVersion": "5.0.2.270",
             "frameworkVersion": "2.4.0.482",
-            "frameworkOverride": "D:/Work/Sencha/Touch/2.4.0"
+            "frameworkOverride": "D:/Sencha/Complete/1.0.7.1/touch-2.4.0"
         },
         "canvasControls": {
             "viewportSize": {
@@ -17,7 +17,7 @@
             "viewportOrientation": "portrait"
         },
         "urlPrefix": "http://localhost/mobile/",
-        "exportPath": "C:/Users/Gaute/Documents/GitHub/MobileCRM/www/cloud/mobile",
+        "exportPath": "D:/Repositories/Cloud/www/cloud/mobile",
         "spacesToIndent": 4,
         "sdkPath": "",
         "lineEnding": "CRLF",

@@ -106,7 +106,7 @@ Ext.define('Exxica.controller.Account', {
 
         loginBtn.setDisabled(true);
         Ext.Ajax.request({
-            url: "http://localhost/cloud/api/index.php?r=mobile/login",
+            url: "../api/index.php?r=mobile/login",
             params: values,
             success: successCallback,
             failure: failureCallback
