@@ -92,6 +92,9 @@ Ext.define('Exxica.controller.Account', {
                         }
                     }
                 });
+            } else {
+                alert('Error', xhr.error);
+                loginBtn.setDisabled(false);
             }
         };
 
@@ -106,10 +109,12 @@ Ext.define('Exxica.controller.Account', {
 
         loginBtn.setDisabled(true);
         Ext.Ajax.request({
-            url: "../api/index.php?r=mobile/login",
+            url: "http://cloud.exxica.com/api/index.php?r=mobile/login",
             params: values,
             success: successCallback,
-            failure: failureCallback
+            failure: failureCallback,
+            withCredentials: true,
+            useDefaultXhrHeader: false
         });
     }
 

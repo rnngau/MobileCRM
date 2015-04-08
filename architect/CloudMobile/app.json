@@ -7,8 +7,8 @@
          "packager": "cordova",
          "cordova": {
             "config": {
-               "id": "com.domain.Exxica",
-               "name": "Exxica",
+               "id": "com.exxica.cloud",
+               "name": "ExxicaCloud",
                "platforms": "android"
             }
          }

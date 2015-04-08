@@ -2,6 +2,6 @@
     "webBuild": {
         "environment": "testing",
         "clean": "on",
-        "publishPath": "C:/Users/Gaute/Documents/GitHub/Cloud/cordova/cloud/www"
+        "publishPath": "D:/Repositories/Cloud/www/cloud/mobile"
     }
 }
